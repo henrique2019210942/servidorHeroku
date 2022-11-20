@@ -76,7 +76,7 @@ app.post("/loginPaciente", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Servidor Rodando na porta ${PORT}`);
 });
 /*******************************************Paceiente***************************************************************** */
@@ -146,7 +146,7 @@ app.post("/loginMedico", (req, res) => {
     }
   );
 });
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Servidor Rodando na porta ${PORT}`);
 });
 /*******************************************Medico***************************************************************** */
