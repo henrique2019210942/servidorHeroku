@@ -1,6 +1,6 @@
 const mysql = require("mysql2");
 
-const dbMedico = mysql.createPool({
+const dbMedico = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
