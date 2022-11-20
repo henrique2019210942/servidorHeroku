@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\HENRIQUE\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\HENRIQUE\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\HENRIQUE\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Common Files\Autodesk Shared;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\HENRIQUE\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\HENRIQUE\AppData\Local\Programs\Python\Python310;C:\Users\HENRIQUE\AppData\Local\Microsoft\WindowsApps;G:\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\HENRIQUE\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\HENRIQUE\Desktop\clone\Projeto-engenharia-1\Servidor\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+
+npm manifest: 
+  {
+    "name": "sevidor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "devStart": "nodemon index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "^5.1.0",
+      "cors": "^2.8.5",
+      "express": "^4.18.2",
+      "mysql2": "^2.3.3",
+      "navigate": "^0.3.6",
+      "navigation": "^6.1.0",
+      "nodemon": "^2.0.20",
+      "react-router-dom": "^5.3.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
