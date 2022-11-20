@@ -8,6 +8,8 @@ const dbPaciente = require("./config/dbPaciente");
 
 const saltRounds = 10;
 
+const PORT = 3001;
+
 /********************************************* Paceinte *************************************************************** */
 
 app.use(express.json());
@@ -144,5 +146,7 @@ app.post("/loginMedico", (req, res) => {
     }
   );
 });
-
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Servidor Rodando na porta ${PORT}`);
+});
 /*******************************************Medico***************************************************************** */
