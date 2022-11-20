@@ -7,3 +7,5 @@ const dbPciente = mysql.createPool({
   password: "root",
   database: "paciente",
 });
+
+module.exports = dbPciente;
