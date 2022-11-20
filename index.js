@@ -6,8 +6,6 @@ const bcrypt = require("bcrypt");
 const dbMedico = require("./config/dbMedico");
 const dbPaciente = require("./config/dbPaciente");
 
-const PORT = 3001;
-
 const saltRounds = 10;
 
 /********************************************* Paceinte *************************************************************** */
@@ -145,10 +143,6 @@ app.post("/loginMedico", (req, res) => {
       }
     }
   );
-});
-
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Servidor Rodando na porta ${PORT}`);
 });
 
 /*******************************************Medico***************************************************************** */
