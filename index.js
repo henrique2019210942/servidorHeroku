@@ -44,7 +44,7 @@ app.delete("/cadastrarConsulta:data", (req, res) => {
   const sqlDelete = "DELETE FROM consultas WHERE data = ?";
 
   dbConsultas.query(sqlDelete, consulta, (err, result) => {
-     console.log(err);
+    console.log(err);
   });
 });
 
@@ -57,11 +57,9 @@ app.put("/consultasMarcadas", (req, res) => {
   const sqlUpdate = "UPDATE consultas SET hora = ? WHERE data= ?";
 
   dbConsultas.query(sqlUpdate, [tipo, endereco, hora, data], (err, result) => {
-   console.log(err);
+    console.log(err);
   });
 });
-
-
 
 /********************************************* Paceinte *************************************************************** */
 
@@ -199,7 +197,5 @@ app.post("/loginMedico", (req, res) => {
     }
   );
 });
-
-
 
 /*******************************************Medico***************************************************************** */
