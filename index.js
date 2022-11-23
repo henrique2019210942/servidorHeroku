@@ -127,8 +127,8 @@ app.post("/loginPaciente", (req, res) => {
   );
 });
 
-app.listen(process.env.PORTP || PORTP, () => {
-  console.log(`Servidor Rodando na porta ${PORTP}`);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Servidor Rodando na porta ${PORT}`);
 });
 /*******************************************Paceiente***************************************************************** */
 
