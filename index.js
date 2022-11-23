@@ -61,9 +61,7 @@ app.put("/consultasMarcadas", (req, res) => {
   });
 });
 
-app.listen(process.env.PORTC || PORTC, () => {
-  console.log(`Servidor Rodando na porta ${PORTC}`);
-});
+
 
 /********************************************* Paceinte *************************************************************** */
 
@@ -202,8 +200,6 @@ app.post("/loginMedico", (req, res) => {
   );
 });
 
-app.listen(process.env.PORTM || PORTM, () => {
-  console.log(`Servidor Rodando na porta ${PORTM}`);
-});
+
 
 /*******************************************Medico***************************************************************** */
