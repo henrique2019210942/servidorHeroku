@@ -1,10 +1,10 @@
 const mysql = require("mysql2");
 
-const dbPciente = mysql.createConnection({
-  host: "us-cdbr-east-06.cleardb.net",
-  user: "bf9e0df16393d2",
-  password: "2722131b",
-  database: "heroku_1a5758074ee6056",
+const dbPciente = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "paciente",
 });
 
 module.exports = dbPciente;
