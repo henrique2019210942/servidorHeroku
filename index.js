@@ -7,11 +7,8 @@ const dbMedico = require("./config/dbMedico");
 const dbPaciente = require("./config/dbPaciente");
 const dbConsultas = require("./config/dbConsultas");
 
-const PORTM = 3001;
-const PORTP = 3002;
-const PORTC = 3003;
-
 const saltRounds = 10;
+
 /********************************************* Marca Consulta *************************************************************** */
 
 app.use(express.json());
@@ -59,6 +56,13 @@ app.put("/consultasMarcadas", (req, res) => {
   dbConsultas.query(sqlUpdate, [tipo, endereco, hora, data], (err, result) => {
     console.log(err);
   });
+});
+app.listen(process.env.PORT || 3001, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
 });
 
 /********************************************* Paceinte *************************************************************** */
@@ -127,7 +131,7 @@ app.post("/loginPaciente", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3003, function () {
   console.log(
     "Express server listening on port %d in %s mode",
     this.address().port,
@@ -199,6 +203,13 @@ app.post("/loginMedico", (req, res) => {
         res.send({ msg: "Usuário não registrado!" });
       }
     }
+  );
+});
+app.listen(process.env.PORT || 3002, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
   );
 });
 
