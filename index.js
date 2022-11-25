@@ -34,26 +34,17 @@ app.get("/cadastrarConsulta", (req, res) => {
     res.send(result);
   });
 });
-app.delete("/cadastrarConsulta:data", (req, res) => {
+
+
+
+
+app.delete("/cadastrarConsulta/:data", (req, res) => {
   const consulta = req.params.data;
 
   const sqlDelete = "DELETE FROM consultas WHERE data = ?";
 
   dbConsultas.query(sqlDelete, consulta, (err, result) => {
-    console.log(err);
-  });
-});
-
-app.put("/consultasMarcadas", (req, res) => {
-  const data = req.body.data;
-  const hora = req.body.hora;
-  const tipo = req.body.tipo;
-  const endereco = req.body.endereco;
-
-  const sqlUpdate = "UPDATE consultas SET hora = ? WHERE data= ?";
-
-  dbConsultas.query(sqlUpdate, [tipo, endereco, hora, data], (err, result) => {
-    console.log(err);
+    if (err) console.log(err);
   });
 });
 
