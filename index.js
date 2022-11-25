@@ -1,8 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const bcrypt = require("bcrypt");
-const bodyParser = require("body-Parser");
+const bcrypt = require("bcryptjs");
 const dbMedico = require("./config/dbMedico");
 const dbPaciente = require("./config/dbPaciente");
 const dbConsultas = require("./config/dbConsultas");
@@ -57,13 +56,6 @@ app.put("/consultasMarcadas", (req, res) => {
     console.log(err);
   });
 });
-app.listen(process.env.PORT || 3001, function () {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
-});
 
 /********************************************* Paceinte *************************************************************** */
 
@@ -75,7 +67,7 @@ app.post("/CadastroPaciente", (req, res) => {
   const password = req.body.password;
 
   dbPaciente.query(
-    "SELECT * FROM pacientes WHERE email = ?",
+    "SELECT * FROM paciente WHERE email = ?",
     [email],
     (err, result) => {
       if (err) {
@@ -84,7 +76,7 @@ app.post("/CadastroPaciente", (req, res) => {
       if (result.length == 0) {
         bcrypt.hash(password, saltRounds, (err, hash) => {
           dbPaciente.query(
-            "INSERT INTO pacientes (email, password) VALUE (?,?)",
+            "INSERT INTO paciente (email, password) VALUE (?,?)",
             [email, hash],
             (error, response) => {
               if (err) {
@@ -107,7 +99,7 @@ app.post("/loginPaciente", (req, res) => {
   const password = req.body.password;
 
   dbPaciente.query(
-    "SELECT * FROM pacientes WHERE email = ?",
+    "SELECT * FROM paciente WHERE email = ?",
     [email],
     (err, result) => {
       if (err) {
@@ -131,13 +123,6 @@ app.post("/loginPaciente", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT || 3003, function () {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
-});
 /*******************************************Paceiente***************************************************************** */
 
 /*******************************************Medico***************************************************************** */
@@ -159,7 +144,7 @@ app.post("/CadastroMedico", (req, res) => {
       if (result.length == 0) {
         bcrypt.hash(password, saltRounds, (err, hash) => {
           dbMedico.query(
-            "INSERT INTO medicos (email, password) VALUE (?,?)",
+            "INSERT INTO medico (email, password) VALUE (?,?)",
             [email, hash],
             (error, response) => {
               if (err) {
@@ -182,7 +167,7 @@ app.post("/loginMedico", (req, res) => {
   const password = req.body.password;
 
   dbMedico.query(
-    "SELECT * FROM medicos WHERE email = ?",
+    "SELECT * FROM medico WHERE email = ?",
     [email],
     (err, result) => {
       if (err) {
@@ -205,7 +190,7 @@ app.post("/loginMedico", (req, res) => {
     }
   );
 });
-app.listen(process.env.PORT || 3002, function () {
+app.listen(process.env.PORT || 5000, function () {
   console.log(
     "Express server listening on port %d in %s mode",
     this.address().port,
